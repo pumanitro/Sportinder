@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="Sportinder.Wall"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sportinder"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="56" Margin="94,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="56" Margin="94,277,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
+
+    </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="refreshButton" Icon="Refresh" Label="Refresh" Click="refreshButton_Click"/>
+            <AppBarButton Icon="Find" Label="search"/>
+            <AppBarButton Icon="Add" Label="New"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
