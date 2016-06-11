@@ -8,6 +8,14 @@
     mc:Ignorable="d">
 
     <Grid>
-        
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="56" Margin="94,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="56" Margin="94,277,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="refreshButton" Icon="Refresh" Label="Refresh" Click="refreshButton_Click"/>
+            <AppBarButton Icon="Find" Label="search"/>
+            <AppBarButton Icon="Add" Label="New"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
