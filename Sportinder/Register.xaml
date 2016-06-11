@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Sportinder.Login"
+    x:Class="Sportinder.Register"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Sportinder"
@@ -15,30 +15,27 @@
             <TextBlock Text="Sportinder"
         		HorizontalAlignment="Center"
         		FontSize="60"
-        		Margin="10,80,10,70"/>
-            <TextBox x:Name="LoginBox" PlaceholderText="Login"
+        		Margin="10,80,10,40"/>
+            <TextBox x:Name="EmailBox" PlaceholderText="E-mail"
         		FontSize="25"
         		HorizontalAlignment="Stretch"
-        		Margin="0,0,0,20"/>
+        		Margin="0,0,0,25"/>
+            <TextBox x:Name="UserBox" PlaceholderText="Username"
+        		FontSize="25"
+        		HorizontalAlignment="Stretch"
+        		Margin="0,0,0,25"/>
             <PasswordBox x:Name="PasswordBox" PlaceholderText="Password"
         		FontSize="25"
-        		Margin="0,0,0,25" KeyDown="PasswordBox_KeyDown"/>
-            <Button Content="Log in"
+        		Margin="0,0,0,25"/>
+            <PasswordBox x:Name="PasswordBox2" PlaceholderText="Repeat password"
+        		FontSize="25"
+        		Margin="0,0,0,25" KeyDown="PasswordBox2_KeyDown"/>
+            <Button Content="Register"
         		HorizontalAlignment="Center"
         		Margin="0,0,0,30"
         		Width="240"
-        		FontSize="40" Click="Button_Click_1"/>
+        		FontSize="40" Click="Button_Click"/>
 
-            <TextBlock Text="Don't have an account yet?"
-        		HorizontalAlignment="Center" Margin="61,0,60,0"/>
-            <HyperlinkButton Content="Register now!"
-        		HorizontalAlignment="Center" Margin="105,0" Click="HyperlinkButton_Click">
-                <HyperlinkButton.ContentTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" />
-                    </DataTemplate>
-                </HyperlinkButton.ContentTemplate>
-            </HyperlinkButton>
         </StackPanel>
     </Grid>
 </Page>

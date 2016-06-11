@@ -21,22 +21,32 @@ namespace Sportinder
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class Register : Page
     {
-        public Login()
+        public Register()
         {
             this.InitializeComponent();
         }
 
-        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (LoginBox.Text.Equals("devrace") && PasswordBox.Password.Equals("devrace"))
+            if (!UserBox.Text.Equals("") && !EmailBox.Text.Equals("") && !PasswordBox.Password.Equals("") && !PasswordBox2.Password.Equals(""))
             {
                 Frame.Navigate(typeof(MainPage));
             }
-            else if(LoginBox.Text.Equals(""))
+            else if (EmailBox.Text.Equals(""))
             {
-                var dialog = new MessageDialog("Please enter login");
+                var dialog = new MessageDialog("Please enter e-mail");
+                await dialog.ShowAsync();
+            }
+            else if (!EmailBox.Text.Contains("@"))
+            {
+                var dialog = new MessageDialog("Entered e-mail is incorrect!");
+                await dialog.ShowAsync();
+            }
+            else if (UserBox.Text.Equals(""))
+            {
+                var dialog = new MessageDialog("Please enter user name");
                 await dialog.ShowAsync();
             }
             else if (PasswordBox.Password.Equals(""))
@@ -44,24 +54,29 @@ namespace Sportinder
                 var dialog = new MessageDialog("Please enter password");
                 await dialog.ShowAsync();
             }
+            else if (PasswordBox2.Password.Equals(""))
+            {
+                var dialog = new MessageDialog("Please confirm password");
+                await dialog.ShowAsync();
+            }
+            else if (PasswordBox2.Password.Equals(PasswordBox.Password))
+            {
+                var dialog = new MessageDialog("Please confirm password");
+                await dialog.ShowAsync();
+            }
             else
             {
                 var dialog = new MessageDialog("The entered login and/or password is incorrect!\nPlease try again :)");
                 await dialog.ShowAsync();
             }
-
         }
 
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        private void PasswordBox2_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Register));
-        }
 
-        private void PasswordBox_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
-                Button_Click_1(null, null);
+                Button_Click(null, null);
             }
         }
     }
