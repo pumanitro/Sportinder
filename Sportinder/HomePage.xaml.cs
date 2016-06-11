@@ -26,5 +26,11 @@ namespace Sportinder
         {
             this.InitializeComponent();
         }
+        private async void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            var position = await LocationManager.GetPosition();
+            textBox_Copy.Text = position.Coordinate.Latitude.ToString();
+            textBox.Text = position.Coordinate.Longitude.ToString();
+        }
     }
 }

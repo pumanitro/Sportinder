@@ -76,8 +76,8 @@ namespace Sportinder.ViewModel
 
         public string Description
         {
-            get { return  description; }
-            set {  description = value; }
+            get { return description; }
+            set { description = value; }
         }
 
 
