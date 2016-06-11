@@ -8,6 +8,124 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0">
+            <Button x:Name="HamburgerButton"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE700;"
+                    FontSize="36"
+                    RelativePanel.AlignLeftWithPanel="True" 
+                    Click="HamburgerButton_Click" />
+            <Button Name="BackButton"
+                    RelativePanel.RightOf="HamburgerButton" 
+                    FontFamily="Segoe MDl2 Assets" 
+                    FontSize="36"
+                    Content="&#xE0C4;" 
+                    Click="BackButton_Click"
+                     />
+            <TextBlock x:Name="PageName"
+                       Text="Main Page"
+                       RelativePanel.RightOf="BackButton"
+                       RelativePanel.AlignVerticalCenterWithPanel="True"
+                       FontSize="24"
+                       Margin="20,0,0,0"/>
+
+        </RelativePanel>
+        <SplitView x:Name="MySplitView"
+                   Grid.Row="1"
+                   OpenPaneLength="300"
+                   DisplayMode="CompactOverlay"
+                   CompactPaneLength="56"
+                   PaneBackground="#99000000">
+            <SplitView.Pane>
+                <RelativePanel>
+                    <ListBox x:Name="MyList" RelativePanel.AlignTopWithPanel="True"
+                             SelectionChanged="ListBox_SelectionChanged">
+                        <ListBoxItem Background="Red" Name="HomePage">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets"
+                                           Text="&#xE10F;"
+                                           FontSize="30"
+                                           Foreground="White"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="Home Page" 
+                                           FontSize="26" Margin="33,0,0,0" 
+                                           Foreground="White" 
+                                           VerticalAlignment="Center"/>
+
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Background="#99000000" Name="EventsAttended">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets"
+                                           Text="&#xE113;"
+                                           FontSize="30"
+                                           Foreground="White"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="My Events" 
+                                           FontSize="26" 
+                                           Margin="33,0,0,0" 
+                                           Foreground="White" 
+                                           VerticalAlignment="Center"/>
+
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Background="#99000000" Foreground="#99000000" Name="EventsCreated">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets"
+                                           Text="&#xE13d;"
+                                           FontSize="30"
+                                           Foreground="White"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="Events Created" 
+                                           FontSize="26" 
+                                           Margin="33,0,0,0" 
+                                           Foreground="White" 
+                                           VerticalAlignment="Center"/>
+
+                            </StackPanel>
+                        </ListBoxItem>
+                        
+                        <ListBoxItem Background="#99000000" Foreground="#99000000" Name="Settings">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock FontFamily="Segoe MDL2 Assets"
+                                           Text="&#xE115;"
+                                           FontSize="30"
+                                           Foreground="White"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="Settings" 
+                                           FontSize="26" 
+                                           Margin="33,0,0,0" 
+                                           Foreground="White" 
+                                           VerticalAlignment="Center"/>
+
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Background="#99000000" Foreground="#99000000" Name="Logout">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock FontFamily="Segoe MDL2 Assets"
+                                           Text="&#xE8D7;"
+                                           FontSize="30"
+                                           Foreground="White"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Text="Logout" 
+                                           FontSize="26" 
+                                           Margin="33,0,0,0" 
+                                           Foreground="White" 
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </RelativePanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame x:Name="MyFrame"/>
+            </SplitView.Content>
+        </SplitView>
+
 
     </Grid>
 </Page>
