@@ -21,6 +21,6 @@ namespace Sportinder.ViewModel
             Events.Add(new Event { ID = 6, Name = "Jhon Cena", Category = "Hearthstone", Date = dataNow, Longitude = 4.8921, Latitude = 52.3712, SlotsMin = 5, SlotsMax = 5, Description = "Awesome HS tournament" });
             return Events;
 
-        }
+         }
     }
 }
